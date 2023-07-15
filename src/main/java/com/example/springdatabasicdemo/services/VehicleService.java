@@ -2,6 +2,8 @@ package com.example.springdatabasicdemo.services;
 
 import com.example.springdatabasicdemo.models.Vehicle;
 
+import java.util.List;
+
 public interface VehicleService<ID> {
 
     void register(Vehicle vehicle);
@@ -13,6 +15,8 @@ public interface VehicleService<ID> {
     Vehicle findVehicle(ID id);
 
     String whatIsVehicle(ID id);
+
+    List<Integer> getIdsThisType(String type);
 
     Integer countThisVehicle(String vehicle);
 

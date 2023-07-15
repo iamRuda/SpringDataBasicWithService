@@ -7,6 +7,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VehicleServiceImpl implements VehicleService<Integer> {
 
@@ -37,6 +39,9 @@ public class VehicleServiceImpl implements VehicleService<Integer> {
     public String whatIsVehicle(Integer id) {
         return vehicleRepository.findById(id).get().getType();
     }
+
+    @Override
+    public List<Integer> getIdsThisType(String type) { return vehicleRepository.findAllIdsByType(type); }
 
     @Override
     public Integer countThisVehicle(String type) {

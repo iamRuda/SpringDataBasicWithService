@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Component
 public class CommandLineRunnerImpl implements CommandLineRunner {
@@ -32,6 +33,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         System.out.println(typeVechical);
         System.out.println(countCarThroughVehicleService);
         System.out.println(countCarThroughCarService);
+        System.out.println(vehicleService.getIdsThisType("CAR"));
     }
 
     private void saveData() throws IOException {
